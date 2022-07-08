@@ -2,7 +2,9 @@ package com.demo.luceneapi.services;
 
 import com.demo.luceneapi.entities.MovieEntity;
 import lombok.AllArgsConstructor;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.search.Query;
+import org.apache.lucene.search.WildcardQuery;
 import org.hibernate.search.jpa.FullTextEntityManager;
 import org.hibernate.search.jpa.FullTextQuery;
 import org.hibernate.search.jpa.Search;
@@ -29,8 +31,8 @@ public class MovieService {
          QueryBuilder queryBuilder = fullTextEntityManager.getSearchFactory().
                                     buildQueryBuilder().forEntity(MovieEntity.class).get();
 
-        Query query = queryBuilder.keyword().onField("title").matching(name).createQuery();
-
+//        Query query = queryBuilder.keyword().onField("title").matching(name).createQuery();
+        Query query = new WildcardQuery(new Term("title", name+"*"));
         FullTextQuery fullTextQuery = fullTextEntityManager.createFullTextQuery(query, MovieEntity.class);
 
         List<MovieEntity> movies = fullTextQuery.getResultList();
