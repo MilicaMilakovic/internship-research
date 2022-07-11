@@ -1,11 +1,12 @@
 import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className={styles.header}>
       <ul className={styles.navigation}>
         <li>
-          <a href="">Lucene Research</a>
+          <Link to="/lucene">Lucene Research</Link>
         </li>
         <li>
           <a href="/">
@@ -13,7 +14,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <a href="">Graph Libraries</a>
+          <Link to="/graphs">Graph Libraries</Link>
         </li>
       </ul>
     </div>
