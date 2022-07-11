@@ -23,20 +23,30 @@ const Movies = () => {
     if (debouncedSearch) fetchMovies();
   }, [debouncedSearch, fetchMovies]);
 
+  const clearSearch = () => {
+    console.log('clear');
+    setMovies([]);
+    setMoviesSearch('');   
+  }
+
   return (
     <div className={styles.container}>
       <Header />
- 
+
       <div className={styles.cover}></div>
-     
-      <input
-        id="searchText"
-        className={styles.input}
-        placeholder="Search..."
-        autoComplete="off"
-        type="text"
-        onChange={(e) => setMoviesSearch(e.target.value)}
-      ></input>
+
+      <div className={styles.controls}>
+        <input
+          id="searchText"
+          className={styles.input}
+          placeholder="Search..."
+          autoComplete="off"
+          type="text"
+          value={moviesSearch}
+          onChange={(e) => setMoviesSearch(e.target.value)}
+        ></input>
+        <button className={styles.clear} onClick={clearSearch}>Clear</button>
+      </div>
 
       <div className={styles.movies}>
         {movies.length !== 0 &&

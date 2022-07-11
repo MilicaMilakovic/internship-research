@@ -8,3 +8,11 @@
   overflow-x: hidden;
 
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #CC0B30;
+  border-radius: 3px;
+}

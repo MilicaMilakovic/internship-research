@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
 
   position: relative;
   
@@ -17,7 +17,7 @@
 
 .cover {
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
 
     background-color: red;
 
@@ -30,7 +30,14 @@
   
 }
 
-
+.controls{
+    position: absolute;
+    top: 40vh;
+    
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
 
 .input {
   width: 30vw;
@@ -41,10 +48,6 @@
   padding-left: 40px;
   border-radius: 20px;
 
-  position: absolute;
-  top: 30vh;
-
-
   border-style: solid;
   border-width: 1px;
   background-color: #3135467f;
@@ -53,11 +56,23 @@
   font-family: 'Roboto';
 }
 
+.clear{
+    height: 37px;
+    border-radius: 20px;
+
+    background-color: #CC0B30;
+    color: white;
+    border: none;
+
+    font-family: 'Roboto';
+    font-size: 16px;
+    width: 100px;
+}
 
 .movies {
     width: 95%;
     flex-grow: 1;
-    margin-top: -100px;
+    margin-top: -230px;
     z-index: 2;
 
     display: flex;
