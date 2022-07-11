@@ -1,4 +1,4 @@
-import { IMovie } from "../IMovie";
+import { IMovie } from "../models/IMovie";
 
 const MovieComponent = (props:{movie:IMovie}) => {
     const {movie}=props;

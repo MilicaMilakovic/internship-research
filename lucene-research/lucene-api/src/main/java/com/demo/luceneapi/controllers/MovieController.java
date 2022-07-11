@@ -22,6 +22,7 @@ public class MovieController {
 
     @GetMapping("/api/movies/{name}")
     public ResponseEntity<List<MovieEntity>> searchMovies(@PathVariable("name") String name){
+        System.out.println(name);
         List<MovieEntity> result = movieService.searchMovies(name);
 
         if(result== null)
