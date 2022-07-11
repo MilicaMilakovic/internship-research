@@ -1,5 +1,6 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import "./App.css";
+import Header from "./components/Layout/Header";
 import MovieComponent from "./components/MovieComponent";
 import useDebonuce from "./hooks/useDebounce";
 import { IMovie } from "./models/IMovie";
@@ -20,11 +21,14 @@ function App() {
 
   useEffect(() => {
       if (debouncedSearch) fetchMovies();
-      
+
   }, [debouncedSearch]);
 
   return (
     <div className="App">
+
+      <Header/>
+
       <input
         id="searchText"
         type="text"

@@ -32,7 +32,7 @@ public class MovieService {
          QueryBuilder queryBuilder = fullTextEntityManager.getSearchFactory().
                                     buildQueryBuilder().forEntity(MovieEntity.class).get();
 
-        
+
         Query query = queryBuilder.keyword().onField("title").matching(name).createQuery();
 //        Query query = new WildcardQuery(new Term("title", name+"*"));
         FullTextQuery fullTextQuery = fullTextEntityManager.createFullTextQuery(query, MovieEntity.class);
