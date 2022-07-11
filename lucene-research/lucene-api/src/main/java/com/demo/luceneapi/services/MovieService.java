@@ -26,6 +26,9 @@ public class MovieService {
     private EntityManager entityManager;
 
     public List<MovieEntity> searchMovies(String name) {
+
+
+
          FullTextEntityManager fullTextEntityManager
                 = Search.getFullTextEntityManager(entityManager);
 

@@ -1,13 +1,14 @@
 import { IMovie } from "../models/IMovie";
+import styles from './MovieComponent.module.css'
 
 const MovieComponent = (props:{movie:IMovie}) => {
     const {movie}=props;
             
     return(
-        <div className="movie">
-          <p>{movie.title}</p>
+        <div className={styles.movie}>
+          <h3>{movie.title}</h3>
           <p>{movie.overview}</p>
-          <hr/>
+       
         </div>
     );
 };

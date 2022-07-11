@@ -2,4 +2,9 @@
   width: 100%;
   min-height: 100vh;
 
+  /* background-color: white; */
+  background-color: #0D2036;
+  position: relative;
+  overflow-x: hidden;
+
 }

@@ -1,20 +1,36 @@
 .header{
-    width: 100%;
+    width: 100vw;
     height: 80px;
 
-    margin-bottom: 10px;
+    padding: 0 50px;
+    /* background-color: #CC0B30; */
+    background: linear-gradient(to bottom, #03000f99, #03000f48);
 
-    background-color: #CC0B30;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 5;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.active{
+    color: #CC0B30;
+}
+
+.logo{
+    margin-left: 10px;
 }
 
 li {
     list-style: none;
     text-transform: uppercase;   
+    margin-right: 5px;
+    font-size: 14px;
 }
 
 a{
@@ -22,17 +38,21 @@ a{
     color: white;
     font-family: 'Roboto';
     letter-spacing: 1.3px;
+
 }
 .navigation {
-    width: 80%;
+    width: 55%;
     height: 95%;
     /* background-color: yellow; */
 
-    margin: 0;
+    margin-right: 80px;
     padding: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 
+#private-route{
+    color: #CC0B30;
+}

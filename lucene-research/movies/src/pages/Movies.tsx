@@ -2,7 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 import useDebonuce from "../hooks/useDebounce";
 import MovieComponent from "../components/MovieComponent";
 import { IMovie } from "../models/IMovie";
-
+import styles from "./Movies.module.css";
+import Header from "../components/Layout/Header";
 const Movies = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
 
@@ -23,14 +24,21 @@ const Movies = () => {
   }, [debouncedSearch, fetchMovies]);
 
   return (
-    <div>
+    <div className={styles.container}>
+      <Header />
+ 
+      <div className={styles.cover}></div>
+     
       <input
         id="searchText"
+        className={styles.input}
+        placeholder="Search..."
+        autoComplete="off"
         type="text"
         onChange={(e) => setMoviesSearch(e.target.value)}
       ></input>
 
-      <div className="movie-container">
+      <div className={styles.movies}>
         {movies.length !== 0 &&
           movies.map((e) => <MovieComponent key={e.movieId} movie={e} />)}
       </div>
