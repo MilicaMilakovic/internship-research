@@ -19,11 +19,9 @@
     width: 100%;
     min-height: 100vh;
 
-    background-color: red;
-
     background: linear-gradient(to bottom, #03000fe9, #061637cb), url('../../public/assets/cover.jpg') no-repeat center;
     background-size: cover;
-    filter: blur(2px);
+    filter: blur(3px);
 
     position: relative;
     top:    0px;

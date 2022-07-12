@@ -19,7 +19,8 @@
 }
 
 .active{
-    color: #CC0B30;
+    color: '#CC0B30';
+    font-weight : bold;
 }
 
 .logo{

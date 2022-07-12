@@ -31,7 +31,7 @@ const Movies = () => {
 
   return (
     <div className={styles.container}>
-      <Header />
+      {/* <Header /> */}
 
       <div className={styles.cover}></div>
 

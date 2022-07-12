@@ -1,7 +1,13 @@
-
+import Header from "../components/Layout/Header";
+import styles from './Graphs.module.css';
 
 const Graphs = () => {
-    return <h1>Graphs</h1>;
+    return (
+        <div className={styles.container}>
+          {/* <Header /> */}
+          <h1>Graphs</h1>
+          </div>
+    );
 };
 
 
