@@ -1,7 +1,13 @@
 import styles from "./Header.module.css";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { logout } from "../../store/authSlice";
 
 const Header = () => {
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+  const dispatch = useAppDispatch();
+
   return (
     <div className={styles.header}>
       <a href="https://bravosystems.com/" target="_blank">
@@ -51,12 +57,22 @@ const Header = () => {
             Private Route
           </NavLink>
         </li>
-        
-        <li>
-          <Link to='/login' className={styles.login}>
-            Login
-          </Link>
-        </li>
+
+        {!isAuthenticated && (
+          <li>
+            <Link to="/login" className={styles.login}>
+              Login
+            </Link>
+          </li>
+        )}
+
+        {isAuthenticated && (
+          <li>
+            <Link to="/" onClick={()=> dispatch(logout())} className={styles.login}>
+              Logout
+            </Link>
+          </li>
+        )}
       </ul>
     </div>
   );
