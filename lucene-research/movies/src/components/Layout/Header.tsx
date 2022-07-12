@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -50,6 +50,12 @@ const Header = () => {
           >
             Private Route
           </NavLink>
+        </li>
+        
+        <li>
+          <Link to='/login' className={styles.login}>
+            Login
+          </Link>
         </li>
       </ul>
     </div>

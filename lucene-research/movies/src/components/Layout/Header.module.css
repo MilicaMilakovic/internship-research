@@ -4,7 +4,7 @@
 
     padding: 0 50px;
     /* background-color: #CC0B30; */
-    background: linear-gradient(to bottom, #03000f99, #03000f48);
+    background: linear-gradient(to bottom, #03000f99, #03000f71);
 
     position: fixed;
     top: 0;
@@ -32,6 +32,17 @@ li {
     text-transform: uppercase;   
     margin-right: 5px;
     font-size: 14px;
+}
+
+.login{
+    /* background-color: #CC0B30; */
+    border: 1px solid #CC0B30;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 20px;
+
+    font-family: 'Roboto';
+    font-size: 13px;
 }
 
 a{

@@ -135,7 +135,19 @@ const ChartJS = () => {
                     color: "#fff",
                   },
                 },
+                
               },
+             
+              animations: {
+                tension: {
+                    duration: 2000,
+                    easing: 'easeInQuad',
+                    from: 1,
+                    to: 0,
+                    loop: false
+                  }
+              },
+
               plugins: {
                 legend: {
                   labels: {
