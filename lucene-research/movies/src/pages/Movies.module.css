@@ -28,13 +28,44 @@
   
 }
 
+.title {
+  margin: auto;
+  margin:30px 0;
+  color: white;
+  font-family: 'Roboto';
+  letter-spacing: 1.5px;
+}
+
 .controls{
-    position: absolute;
     top: 40vh;
-    
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 40px;
+    margin: 20px;
+}
+
+.center{
+  width: 50vw;
+  min-height: 40vh;
+  position: absolute;
+  top: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+p{
+  text-align: center;
+  font-family: 'Roboto';
+}
+.concepts{
+  margin: 10px 0;
+  width: 60%;
+  color: #FF1744;
+  text-align: left;
 }
 
 .input {

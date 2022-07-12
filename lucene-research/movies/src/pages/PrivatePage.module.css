@@ -1,7 +1,6 @@
 .container {
     width: 100%;
-    min-height: 100vh;
-  
+    min-height: 100vh;  
     position: relative;
     
     /* background-color: rgba(16, 16, 19, 0.593); */
@@ -10,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    color: white;  
+    
     overflow-x: hidden;
-  }
+    color: white;
+}

@@ -1,6 +1,11 @@
+import styles from './PrivatePage.module.css'; 
 
 const PrivatePage = () => {
-    return <h1>Private page</h1>;
-}
+  return (
+    <div className={styles.container}>
+      <h1>Private page</h1>
+    </div>
+  );
+};
 
 export default PrivatePage;
