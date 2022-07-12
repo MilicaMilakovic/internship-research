@@ -1,17 +1,10 @@
 import styles from "./Header.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  const activeStyles = "styles.active";
-
-  const active = {
-    color: "#CC0B30",
-    fontWeight: "bold",
-  };
-
   return (
     <div className={styles.header}>
-      <a href="/">
+      <a href="https://bravosystems.com/" target="_blank">
         <img
           className="logo"
           src={`${process.env.PUBLIC_URL}/assets/logo.svg`}
