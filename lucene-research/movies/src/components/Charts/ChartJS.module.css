@@ -37,7 +37,7 @@
 
 .charts{
     width: 100%;
-    min-height: 400px;
+    min-height: 550px;
     /* max-height: 500px; */
     flex-grow: 1;
 
@@ -70,9 +70,45 @@
 }
 
 .summary{
+  width: 100%;
+  min-height: 150px;
+  /* background-color: red; */
+  border-top: 1px solid #5d6a793b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 
 }
 
+.points {
+  width: 100%;
+  padding: 10px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  flex-wrap: wrap;
+}
+
+.point {
+  border-right: 1px solid #5d6a793b;
+  min-height: 80px;
+  ;
+ flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: red; */
+
+}
+
+.point:nth-last-child(1){
+  border: none;
+}
 @media only screen and (max-width: 600px) {
    .charts{
     flex-direction: column;
