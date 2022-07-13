@@ -1,5 +1,5 @@
 import { Bar, Line } from "react-chartjs-2";
-import styles from "./ChartJS.module.css";
+import styles from "./Charts.module.css";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
@@ -8,7 +8,7 @@ const ChartJS = () => {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [
       {
-        label: "# of Votes",
+        label: "# BarChart Dataset",
         data: [12, 19, 3, 5, 2, 3],
 
         backgroundColor: [
@@ -68,7 +68,7 @@ const ChartJS = () => {
   };
 
   return (
-    <div className={styles.chartJS}>
+    <div className={styles.container}>
       <div className={styles.title}>
         <img
           className="logo"

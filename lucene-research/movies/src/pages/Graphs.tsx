@@ -1,5 +1,6 @@
 import styles from "./Graphs.module.css";
 import ChartJS from "../components/Charts/ChartJS";
+import Recharts from "../components/Charts/Recharts";
 
 const Graphs = () => {
   return (
@@ -9,7 +10,7 @@ const Graphs = () => {
             <p>Libraries:</p>
         </div>
         <ChartJS/>
-        <ChartJS/>
+        <Recharts/>
          
         
 
