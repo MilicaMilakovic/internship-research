@@ -46,7 +46,7 @@ const Header = () => {
           </NavLink>
         </li>
 
-        <li id="private-route">
+        {/* <li id="private-route">
           <NavLink
             to="/private"
             style={({ isActive }) => ({
@@ -56,7 +56,7 @@ const Header = () => {
           >
             Private Route
           </NavLink>
-        </li>
+        </li> */}
 
         {!isAuthenticated && (
           <li>

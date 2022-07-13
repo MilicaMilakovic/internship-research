@@ -14,12 +14,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Movies />}></Route>
         <Route path="lucene" element={<Movies />}></Route>
-        <Route path="graphs" element={<Graphs />}></Route>
+        {/* <Route path="graphs" element={<Graphs />}></Route> */}
         <Route
-          path="private"
+          path="graphs"
           element={
             <PrivateRoute>
-              <PrivatePage />
+              <Graphs />
             </PrivateRoute>
           }
         ></Route>
