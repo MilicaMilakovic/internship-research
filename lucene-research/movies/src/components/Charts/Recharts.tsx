@@ -116,7 +116,7 @@ const Recharts = () => {
               {
           	barChartData.map((entry, index) => {
             	const color = colors[index];
-            	return <Cell fill={color} />;
+            	return <Cell key={index} fill={color} />;
             })
           }
               </Bar>
@@ -165,11 +165,13 @@ const Recharts = () => {
       <div className={styles.summary}>
         <p style={{ fontSize: "18px" }}>Summary</p>
         <div className={styles.points}>
-          <div className={styles.point}>Responsive </div>
-          <div className={styles.point}>Customizable</div>
+        <div className={styles.point}>More popular </div>
+          <div className={styles.point}>Responsive, but not by default</div>
+          <div className={styles.point}>Customizable, but poor animations support</div>
+          <div className={styles.point}>SVG only for drawing support, and no mobile support</div>
           <div className={styles.point}>Offers various types of charts</div>
           <div className={styles.point}>Detailed documentation</div>
-          <div className={styles.point}>More popular </div>
+          
         </div>
       </div>
     </div>

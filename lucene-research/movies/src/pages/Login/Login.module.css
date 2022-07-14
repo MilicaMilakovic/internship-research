@@ -12,7 +12,7 @@
 
   padding-top: 80px;
 
-  background-image: url('../../public/assets/waves.svg');
+  background-image: url('../../../public/assets/waves.svg');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -50,11 +50,11 @@
 }
 
 .username {
-  background: url('../../public/assets/user.png') no-repeat 10px;
+  background: url('../../../public/assets/user.png') no-repeat 10px;
   background-size: 20px;
 }
 .password{
-  background: url('../../public/assets/lock.png') no-repeat 10px;
+  background: url('../../../public/assets/lock.png') no-repeat 10px;
   background-size: 20px;
 }
 .btn{

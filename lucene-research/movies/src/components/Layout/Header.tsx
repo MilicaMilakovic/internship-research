@@ -1,6 +1,5 @@
 import styles from "./Header.module.css";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { logout } from "../../store/authSlice";
 

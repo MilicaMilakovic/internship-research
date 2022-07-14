@@ -19,7 +19,7 @@
     width: 100%;
     min-height: 100vh;
 
-    background: linear-gradient(to bottom, #03000fe9, #061637cb), url('../../public/assets/cover.jpg') no-repeat center;
+    background: linear-gradient(to bottom, #03000fe9, #061637cb), url('../../../public/assets/cover.jpg') no-repeat center;
     background-size: cover;
     filter: blur(3px);
 
@@ -72,7 +72,7 @@ p{
   width: 30vw;
   height: 35px;
   margin: 20px;
-  background: url('../../public/assets/search.png') no-repeat 10px;
+  background: url('../../../public/assets/search.png') no-repeat 10px;
   background-size: 20px;
   padding-left: 40px;
   border-radius: 20px;

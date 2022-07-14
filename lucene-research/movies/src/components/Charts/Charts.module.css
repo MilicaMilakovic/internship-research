@@ -52,11 +52,13 @@
 .bar{
     height: 100%;
     min-height: 400px;
+    
     width: 45%;
     display: flex;
     align-items: center;
     /* background-color: yellow; */
 }
+
 
 .line{
     height: 100%;
@@ -67,6 +69,12 @@
     /* background-color: red; */
 
 }
+
+
+.nivoSize{
+  height: 500px;
+}
+
 
 .summary{
   width: 100%;
@@ -93,10 +101,10 @@
 
 .point {
   border-right: 1px solid #5d6a793b;
-  min-height: 80px;
-  ;
- flex-grow: 1;
-
+  min-height: 70px;
+  word-break: break-all;
+  flex-grow: 1;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;

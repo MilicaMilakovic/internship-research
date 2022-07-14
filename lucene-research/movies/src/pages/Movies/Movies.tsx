@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
-import useDebonuce from "../hooks/useDebounce";
-import MovieComponent from "../components/MovieComponent";
-import { IMovie } from "../models/IMovie";
+import useDebonuce from "../../hooks/useDebounce";
+import MovieComponent from "../../components/MovieComponent";
+import { IMovie } from "../../models/IMovie";
 import styles from "./Movies.module.css";
 const Movies = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);

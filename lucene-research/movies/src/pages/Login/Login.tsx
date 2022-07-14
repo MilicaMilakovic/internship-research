@@ -1,7 +1,7 @@
 import styles from "./Login.module.css";
-import { useAppDispatch } from "../store/hooks";
-import { login } from "../store/authSlice";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../store/hooks";
+import { login } from "../../store/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useAppDispatch();

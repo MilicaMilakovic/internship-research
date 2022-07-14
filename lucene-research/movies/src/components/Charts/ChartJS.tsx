@@ -165,6 +165,7 @@ const ChartJS = () => {
         <div className={styles.points}>
             <div className={styles.point}>Responsive by default</div>
             <div className={styles.point}>Customizable</div>
+            <div className={styles.point}>Canvas for drawing support, and no mobile support</div>
             <div className={styles.point}>Supports animation</div>
             <div className={styles.point}>Offers various types of charts</div>
             <div className={styles.point}>Detailed documentation</div>
