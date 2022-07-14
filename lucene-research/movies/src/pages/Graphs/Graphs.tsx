@@ -10,13 +10,13 @@ const Graphs = () => {
         <h1>JavaScript Graph Libraries Research</h1>
         <p style={{color:'#FF1744'}}>Libraries:</p> <br />
         <div className={styles.libraries}>
-          <a href="https://www.npmjs.com/package/react-chartjs-2" target='_blank' rel="noopener noreferrer"><p>react-chartjs-2</p></a>
           <a href="https://recharts.org/en-US/" target="_blank" rel="noopener noreferrer"><p>Recharts</p></a>
+          <a href="https://www.npmjs.com/package/react-chartjs-2" target='_blank' rel="noopener noreferrer"><p>react-chartjs-2</p></a>
           <a href="https://nivo.rocks/" target="_blank" rel="noopener noreferrer"><p>nivo</p></a>
         </div>
       </div>
-      <ChartJS />
       <Recharts />
+      <ChartJS />
       <Nivo />
     </div>
   );
