@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
-      <a href="https://bravosystems.com/" target="_blank">
+      <a href="https://bravosystems.com/" target="_blank" rel="noopener noreferrer">
         <img
           className="logo"
           src={`${process.env.PUBLIC_URL}/assets/logo.svg`}

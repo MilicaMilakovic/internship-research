@@ -1,7 +1,6 @@
 import styles from "./Charts.module.css";
-import { ComputedBarDatum, ComputedDatum, ResponsiveBar } from "@nivo/bar";
+import { ResponsiveBar } from "@nivo/bar";
 import { ResponsiveLine } from "@nivo/line";
-import { Bar } from "react-chartjs-2";
 
 const data = [
   {
@@ -97,14 +96,7 @@ const theme = {
     },
   },
 };
-const colors = [
-  "rgba(255, 99, 132, 1)",
-  "rgba(54, 162, 235, 0.6)",
-  "rgba(255, 206, 86, 0.6)",
-  "rgba(75, 192, 192, 0.6)",
-  "rgba(153, 102, 255, 0.6)",
-  "rgba(255, 159, 64, 0.6)",
-];
+
 
 const Nivo = () => {
   return (
@@ -126,7 +118,7 @@ const Nivo = () => {
             colors={({ id, data }) => String(data.movieColor)}
             keys={["movie"]}
             indexBy="color"
-            margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+            margin={{ top: 50, right: 30, bottom: 50, left: 30 }}
             padding={0.3}
             valueScale={{ type: "linear" }}
             indexScale={{ type: "band", round: true }}
@@ -214,7 +206,7 @@ const Nivo = () => {
           <ResponsiveLine
             data={lineData}
             theme={theme}
-            margin={{ top: 50, right: 50, bottom: 50, left: 60 }}
+            margin={{ top: 50, right: 30, bottom: 50, left: 30 }}
             xScale={{ type: "point" }}
             yScale={{
               type: "linear",
