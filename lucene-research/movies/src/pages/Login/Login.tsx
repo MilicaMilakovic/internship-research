@@ -3,11 +3,12 @@ import { useAppDispatch } from "../../store/hooks";
 import { login } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
+import Button from "../../components/UI/Button/Button";
 
 const Login = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.login}>
@@ -20,15 +21,15 @@ const Login = () => {
           type="password"
           className={classNames(styles.input, styles.password)}
         />
-        <button
-          className={styles.btn}
+        <Button
+          type="primary"
           onClick={() => {
             dispatch(login());
             navigate("/graphs", { replace: true });
           }}
         >
           Login
-        </button>
+        </Button>
       </div>
       <div className={styles.footer}>
         <img

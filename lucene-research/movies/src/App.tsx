@@ -4,15 +4,32 @@ import Graphs from "./pages/Graphs/Graphs";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Layout/Header";
 import Login from "./pages/Login/Login";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/Route/PrivateRoute";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
+  const queryClient = new QueryClient();
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Movies />}></Route>
-        <Route path="lucene" element={<Movies />}></Route>
+        <Route
+          path="/"
+          element={
+            <QueryClientProvider client={queryClient}>
+              <Movies />
+            </QueryClientProvider>
+          }
+        ></Route>
+
+        <Route
+          path="lucene"
+          element={
+            <QueryClientProvider client={queryClient}>
+              <Movies />
+            </QueryClientProvider>
+          }
+        ></Route>
         <Route
           path="graphs"
           element={

@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useAppSelector } from "../store/hooks";
+import { useAppSelector } from "../../store/hooks";
 
 const PrivateRoute = (props: any) => {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);

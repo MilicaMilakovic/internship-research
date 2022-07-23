@@ -1,23 +1,42 @@
 import { useState, useEffect, useCallback } from "react";
 import useDebonuce from "../../hooks/useDebounce";
-import MovieComponent from "../../components/MovieComponent";
+import MovieComponent from "../../components/Movie/MovieComponent";
 import { IMovie } from "../../models/IMovie";
 import styles from "./Movies.module.css";
+import { useQuery, useQueryClient } from "react-query";
+import Button from "../../components/UI/Button/Button";
 
 const Movies = () => {
+  const queryClient = useQueryClient();
+
   const [movies, setMovies] = useState<IMovie[]>([]);
 
   const [moviesSearch, setMoviesSearch] = useState("");
 
   const debouncedSearch = useDebonuce(moviesSearch, 500);
 
-  const fetchMovies = useCallback(async () => {
-    const result = await fetch(
+  const fetchMovies = useCallback( async () => {
+    const response = await fetch(
       `http://localhost:8080/api/movies/${debouncedSearch}`
     );
-    const data = await result.json();
+    const data: IMovie[] = await response.json();
+    // return response.json();
     setMovies(data);
   }, [debouncedSearch]);
+
+  // const { data, status, error } = useQuery("movies", fetchMovies);
+
+  // if (status === "loading") {
+  //   console.log("loading");
+  // }
+
+  // if (status === "error") {
+  //   console.log("error", error);
+  // }
+
+  // if (status === "success") {
+  //   console.log("success", data);
+  // }
 
   useEffect(() => {
     if (debouncedSearch) fetchMovies();
@@ -44,26 +63,24 @@ const Movies = () => {
             value={moviesSearch}
             onChange={(e) => setMoviesSearch(e.target.value)}
           ></input>
-          <button className={styles.clear} onClick={clearSearch}>
+
+          <Button type="primary" onClick={clearSearch}>
             Clear
-          </button>
+          </Button>
         </div>
 
         <div className={styles.concepts}>
-          <p style={{ color: "#B6B8BF", fontWeight: "bold" }}>
-            Key concepts:
-          </p>
+          <p style={{ color: "#B6B8BF", fontWeight: "bold" }}>Key concepts:</p>
           <div className={styles.concept}>
             <p>Debounce</p>
             <p>Lucene</p>
           </div>
-         
         </div>
       </div>
 
       <div className={styles.movies}>
         {movies.length !== 0 &&
-          movies.map((e) => <MovieComponent key={e.movieId} movie={e} />)}
+          movies.map((e: IMovie) => <MovieComponent key={e.movieId} movie={e} />)}
       </div>
     </div>
   );

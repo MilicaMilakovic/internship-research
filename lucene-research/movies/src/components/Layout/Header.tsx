@@ -1,11 +1,13 @@
 import styles from "./Header.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { logout } from "../../store/authSlice";
+import Button from "../UI/Button/Button";
 
 const Header = () => {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className={styles.header}>
@@ -59,13 +61,8 @@ const Header = () => {
 
         {isAuthenticated && (
           <li>
-            <Link
-              to="/"
-              onClick={() => dispatch(logout())}
-              className={styles.login}
-            >
-              Logout
-            </Link>
+            <Button type="default" onClick={() =>{ dispatch(logout());   navigate("/lucene", { replace: true });}}>Logout</Button>
+            
           </li>
         )}
       </ul>
