@@ -61,8 +61,15 @@ const Header = () => {
 
         {isAuthenticated && (
           <li>
-            <Button type="default" onClick={() =>{ dispatch(logout());   navigate("/lucene", { replace: true });}}>Logout</Button>
-            
+            <Button
+              type="default"
+              onClick={() => {
+                dispatch(logout());
+                navigate("/lucene", { replace: true });
+              }}
+            >
+              Logout
+            </Button>
           </li>
         )}
       </ul>

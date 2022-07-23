@@ -6,11 +6,19 @@ interface Props {
   type: string;
   onClick: () => void;
   children?: React.ReactNode;
+  width?: string;
 }
 
-const Button  = (props: Props) => {
+const Button = (props: Props) => {
   return (
-    <button className={classNames(styles.button, props.type === 'primary' ? styles.primary : styles.default)} onClick={props.onClick}>
+    <button
+      className={classNames(
+        styles.button,
+        props.type === "primary" ? styles.primary : styles.default
+      )}
+      onClick={props.onClick}
+      style={{width: props.width}}
+    >
       {props.children}
     </button>
   );

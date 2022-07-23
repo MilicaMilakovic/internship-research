@@ -5,6 +5,7 @@ import { IMovie } from "../../models/IMovie";
 import styles from "./Movies.module.css";
 import { useQuery, useQueryClient } from "react-query";
 import Button from "../../components/UI/Button/Button";
+import Input from "../../components/UI/Input/Input";
 
 const Movies = () => {
   const queryClient = useQueryClient();
@@ -54,15 +55,16 @@ const Movies = () => {
       <div className={styles.center}>
         <h1 className={styles.title}>Search movies</h1>
         <div className={styles.controls}>
-          <input
-            id="searchText"
-            className={styles.input}
-            placeholder="Search..."
-            autoComplete="off"
-            type="text"
-            value={moviesSearch}
-            onChange={(e) => setMoviesSearch(e.target.value)}
-          ></input>
+          <Input id="searchText" placeholder="Search..." search={true} value={moviesSearch} autoComplete="off" type="text" onChange={(e) => setMoviesSearch(e.target.value)}></Input>
+            {/* <input
+              id="searchText"
+              className={styles.input}
+              placeholder="Search..."
+              autoComplete="off"
+              type="text"
+              value={moviesSearch}
+              onChange={(e) => setMoviesSearch(e.target.value)}
+            ></input> */}
 
           <Button type="primary" onClick={clearSearch}>
             Clear

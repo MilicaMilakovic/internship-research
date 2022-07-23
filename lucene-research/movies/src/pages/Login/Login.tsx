@@ -2,8 +2,8 @@ import styles from "./Login.module.css";
 import { useAppDispatch } from "../../store/hooks";
 import { login } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
-import classNames from "classnames";
 import Button from "../../components/UI/Button/Button";
+import Input from "../../components/UI/Input/Input";
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -13,20 +13,28 @@ const Login = () => {
     <div className={styles.container}>
       <div className={styles.login}>
         <h1 className={styles.title}>Login</h1>
-        <input
+        <Input
           type="text"
-          className={classNames(styles.input, styles.username)}
-        />
-        <input
-          type="password"
-          className={classNames(styles.input, styles.password)}
-        />
+          placeholder="Username"
+          autoComplete="off"
+          username={true}
+          width="25vw"
+        ></Input>
+        <Input
+          type="text"
+          placeholder="Password"
+          autoComplete="off"
+          password={true}
+          width="25vw"
+        ></Input>
+
         <Button
           type="primary"
           onClick={() => {
             dispatch(login());
             navigate("/graphs", { replace: true });
           }}
+          width="200px"
         >
           Login
         </Button>
