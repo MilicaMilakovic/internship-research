@@ -3,6 +3,7 @@ import useDebonuce from "../../hooks/useDebounce";
 import MovieComponent from "../../components/MovieComponent";
 import { IMovie } from "../../models/IMovie";
 import styles from "./Movies.module.css";
+
 const Movies = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
 
@@ -30,8 +31,6 @@ const Movies = () => {
 
   return (
     <div className={styles.container}>
-      {/* <Header /> */}
-
       <div className={styles.cover}></div>
       <div className={styles.center}>
         <h1 className={styles.title}>Search movies</h1>
@@ -50,9 +49,16 @@ const Movies = () => {
           </button>
         </div>
 
-        <p className={styles.concepts}>
-          <span style={{color: '#B6B8BF', fontWeight:'bold'}}>Key concepts:</span>&nbsp; &nbsp;&nbsp; Debounce &nbsp; &nbsp; Lucene
-        </p>
+        <div className={styles.concepts}>
+          <p style={{ color: "#B6B8BF", fontWeight: "bold" }}>
+            Key concepts:
+          </p>
+          <div className={styles.concept}>
+            <p>Debounce</p>
+            <p>Lucene</p>
+          </div>
+         
+        </div>
       </div>
 
       <div className={styles.movies}>

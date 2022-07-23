@@ -28,7 +28,6 @@ import java.util.List;
 public class MovieService {
 
     private EntityManager entityManager;
-    Analyzer analyzer  = new SimpleAnalyzer();
 
     public List<MovieEntity> searchMovies(String name) {
 

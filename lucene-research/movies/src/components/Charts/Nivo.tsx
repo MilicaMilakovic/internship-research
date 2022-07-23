@@ -97,7 +97,6 @@ const theme = {
   },
 };
 
-
 const Nivo = () => {
   return (
     <div className={styles.container}>
@@ -259,9 +258,7 @@ const Nivo = () => {
           <div className={styles.point}>
             Offers interactive playground or Storybook for customization
           </div>
-          <div className={styles.point}>
-            Difficult to customize
-            </div>
+          <div className={styles.point}>Difficult to customize</div>
         </div>
       </div>
     </div>

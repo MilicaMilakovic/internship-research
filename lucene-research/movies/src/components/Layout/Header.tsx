@@ -9,7 +9,11 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
-      <a href="https://bravosystems.com/" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://bravosystems.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
           className="logo"
           src={`${process.env.PUBLIC_URL}/assets/logo.svg`}
@@ -45,18 +49,6 @@ const Header = () => {
           </NavLink>
         </li>
 
-        {/* <li id="private-route">
-          <NavLink
-            to="/private"
-            style={({ isActive }) => ({
-              color: isActive ? "#CC0B30" : "#ffffff",
-              fontWeight: "bold",
-            })}
-          >
-            Private Route
-          </NavLink>
-        </li> */}
-
         {!isAuthenticated && (
           <li>
             <Link to="/login" className={styles.login}>
@@ -67,7 +59,11 @@ const Header = () => {
 
         {isAuthenticated && (
           <li>
-            <Link to="/" onClick={()=> dispatch(logout())} className={styles.login}>
+            <Link
+              to="/"
+              onClick={() => dispatch(logout())}
+              className={styles.login}
+            >
               Logout
             </Link>
           </li>
