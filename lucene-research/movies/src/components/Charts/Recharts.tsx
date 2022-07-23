@@ -79,6 +79,7 @@ const colors = [
   "rgba(153, 102, 255, 0.6)",
   "rgba(255, 159, 64, 0.6)",
 ];
+
 const Recharts = () => {
   return (
     <div className={styles.container}>

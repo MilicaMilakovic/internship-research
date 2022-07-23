@@ -8,21 +8,20 @@ import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
 
 const Movies = () => {
-  const queryClient = useQueryClient();
-
   const [movies, setMovies] = useState<IMovie[]>([]);
-
+  const [isLoading, setIsLoading] = useState(false);
   const [moviesSearch, setMoviesSearch] = useState("");
-
   const debouncedSearch = useDebonuce(moviesSearch, 500);
 
-  const fetchMovies = useCallback( async () => {
+  const fetchMovies = useCallback(async () => {
+    setIsLoading(true);
     const response = await fetch(
       `http://localhost:8080/api/movies/${debouncedSearch}`
     );
     const data: IMovie[] = await response.json();
     // return response.json();
     setMovies(data);
+    setIsLoading(false);
   }, [debouncedSearch]);
 
   // const { data, status, error } = useQuery("movies", fetchMovies);
@@ -55,17 +54,15 @@ const Movies = () => {
       <div className={styles.center}>
         <h1 className={styles.title}>Search movies</h1>
         <div className={styles.controls}>
-          <Input id="searchText" placeholder="Search..." search={true} value={moviesSearch} autoComplete="off" type="text" onChange={(e) => setMoviesSearch(e.target.value)}></Input>
-            {/* <input
-              id="searchText"
-              className={styles.input}
-              placeholder="Search..."
-              autoComplete="off"
-              type="text"
-              value={moviesSearch}
-              onChange={(e) => setMoviesSearch(e.target.value)}
-            ></input> */}
-
+          <Input
+            id="searchText"
+            placeholder="Search..."
+            search={true}
+            value={moviesSearch}
+            autoComplete="off"
+            type="text"
+            onChange={(e) => setMoviesSearch(e.target.value)}
+          ></Input>
           <Button type="primary" onClick={clearSearch}>
             Clear
           </Button>
@@ -81,8 +78,12 @@ const Movies = () => {
       </div>
 
       <div className={styles.movies}>
-        {movies.length !== 0 &&
-          movies.map((e: IMovie) => <MovieComponent key={e.movieId} movie={e} />)}
+        {isLoading && <span className={styles.loader}></span>}
+        {!isLoading &&
+          movies.length !== 0 &&
+          movies.map((e: IMovie) => (
+            <MovieComponent key={e.movieId} movie={e} />
+          ))}
       </div>
     </div>
   );

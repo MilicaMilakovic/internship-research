@@ -1,6 +1,7 @@
 import styles from "./Charts.module.css";
 import { ResponsiveBar } from "@nivo/bar";
 import { ResponsiveLine } from "@nivo/line";
+import classNames from "classnames";
 
 const data = [
   {
@@ -110,7 +111,7 @@ const Nivo = () => {
       </div>
 
       <div className={styles.charts}>
-        <div className={`${styles.bar} ${styles.nivoSize}`}>
+        <div className={classNames(styles.bar, styles.nivoSize)}>
           <ResponsiveBar
             data={data}
             theme={theme}
@@ -201,7 +202,7 @@ const Nivo = () => {
           />
         </div>
 
-        <div className={`${styles.line} ${styles.nivoSize}`}>
+        <div className={classNames(styles.line, styles.nivoSize)}>
           <ResponsiveLine
             data={lineData}
             theme={theme}
