@@ -2,24 +2,28 @@ import classNames from "classnames";
 import React from "react";
 import styles from "./Button.module.css";
 
-interface Props {
-  type: string;
-  onClick: () => void;
+export type ButtonType = "primary" | "default";
+
+const buttonTypeClasses: Record<ButtonType, string> = {
+  primary: styles.primary,
+  default: styles.default,
+};
+
+export interface ButtonProps 
+    extends Omit< React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>,HTMLButtonElement>,"type" >{
   children?: React.ReactNode;
   width?: string;
+  type: ButtonType;
 }
 
-const Button = (props: Props) => {
+const Button = ({ type, width, children, ...rest }: ButtonProps) => {
   return (
     <button
-      className={classNames(
-        styles.button,
-        props.type === "primary" ? styles.primary : styles.default
-      )}
-      onClick={props.onClick}
-      style={{width: props.width}}
+      className={classNames(styles.button, buttonTypeClasses[type])}
+      style={{ width: width }}
+      {...rest}
     >
-      {props.children}
+      {children}
     </button>
   );
 };
